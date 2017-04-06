@@ -6,7 +6,7 @@ import org.aspectj.lang.annotation.Aspect;
 
 @Aspect
 public class MyAspect {
-  @Around("execution(* *(..))") // !static
+  @Around("execution(* org.apache.log4j.*(..))") // !static
   public Object dontLogDuplicates(ProceedingJoinPoint thisJoinPoint) throws Throwable {
     System.out.println(thisJoinPoint);
     return thisJoinPoint.proceed();
